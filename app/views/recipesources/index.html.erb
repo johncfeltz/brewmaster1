@@ -1,0 +1,23 @@
+<h1>Listing recipesources</h1>
+
+<table>
+  <tr>
+    <th>Source</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @recipesources.each do |recipesource| %>
+  <tr>
+    <td><%= recipesource.source %></td>
+    <td><%= link_to 'Show', recipesource %></td>
+    <td><%= link_to 'Edit', edit_recipesource_path(recipesource) %></td>
+    <td><%= link_to 'Destroy', recipesource, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Recipesource', new_recipesource_path %>

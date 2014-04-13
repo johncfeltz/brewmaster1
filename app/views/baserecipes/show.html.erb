@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @baserecipe.name %>
+</p>
+
+<p>
+  <b>Source:</b>
+  <%= @baserecipe.recipesource.source %>
+</p>
+
+<p>
+  <b>Source Reference:</b>
+  <%= @baserecipe.recipesourceref %>
+</p>
+
+<p>
+  <b>Recipe Details:</b>
+  <%= @baserecipe.recipe %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%= @baserecipe.note %>
+</p>
+
+
+<%= link_to 'Edit', edit_baserecipe_path(@baserecipe) %> |
+<%= link_to 'Back', baserecipes_path %>

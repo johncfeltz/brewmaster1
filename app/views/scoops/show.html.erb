@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Batch:</b>
+  <%= @scoop.batch_id %>
+</p>
+
+<p>
+  <b>Ingredient:</b>
+  <%= @scoop.ingredient_id %>
+</p>
+
+<p>
+  <b>Quantity:</b>
+  <%= @scoop.quantity %>
+</p>
+
+<p>
+  <b>Unit:</b>
+  <%= @scoop.unit %>
+</p>
+
+
+<%= link_to 'Edit', edit_scoop_path(@scoop) %> |
+<%= link_to 'Back', scoops_path %>

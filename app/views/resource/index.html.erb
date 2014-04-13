@@ -1,0 +1,11 @@
+<h1>Manage Resources</h1>
+<p>Choose from the options below</p>
+
+<p><%= link_to "Brew Names", brewnames_path %> : Your name for what you brew - be careful with trademarks!  Until you are consistent,
+	it's a good idea to put version numbers in here.</p>
+<p><%= link_to "Base Recipes", baserecipes_path %> : The full text of a recipe, including ingredients, time and temperature, etc.</p>
+<p><%= link_to "Ingredients", ingredients_path %> : What's going into a batch, including the source.  Don't worry about weight or volume;
+	we track that separately for each batch.</p>
+
+</br>
+<p><%= link_to "Return to Main Menu", :controller => "home", :action => "index" %></p>

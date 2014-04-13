@@ -1,0 +1,25 @@
+<h1>Listing brewstyles</h1>
+
+<table>
+  <tr>
+    <th>Style</th>
+    <th>Note</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @brewstyles.each do |brewstyle| %>
+  <tr>
+    <td><%= brewstyle.style %></td>
+    <td><%= brewstyle.note %></td>
+    <td><%= link_to 'Show', brewstyle %></td>
+    <td><%= link_to 'Edit', edit_brewstyle_path(brewstyle) %></td>
+    <td><%= link_to 'Destroy', brewstyle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Brewstyle', new_brewstyle_path %>

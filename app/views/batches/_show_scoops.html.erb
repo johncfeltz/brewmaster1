@@ -1,0 +1,24 @@
+<% if scoops.empty? -%>
+  <p>No Ingredients</p>
+<% else -%>
+  <h3>Ingredients</h3>
+  <table width="100%" class="listset">
+  	<tr class="listheader">
+      <td>Ingredient</td>
+	  <td>Quantity</td>
+	  <td></td>
+      <td>Source</td>
+	</tr> 
+
+  <% odd_or_even = 1 -%>		  
+  <% for scoop in scoops -%>
+    <% odd_or_even = 1 - odd_or_even -%>
+    <tr class="listrow<%= odd_or_even -%>">
+      <td><%= scoop.ingredient.name -%></td>
+      <td><%= scoop.quantity -%></td>
+      <td><%= scoop.unit -%></td>
+      <td><%= scoop.ingredient.ingredientsource.name -%></td>
+    </tr>
+  <% end -%>
+  </table>
+<% end -%>

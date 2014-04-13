@@ -1,0 +1,73 @@
+<%= form_for(@tastingnote) do |f| %>
+  <% if @tastingnote.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tastingnote.errors.count, "error") %> prohibited this tastingnote from being saved:</h2>
+
+      <ul>
+      <% @tastingnote.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :batch_id %><br />
+    <%= f.select(:batch_id, @b) %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.date_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :taster %><br />
+    <%= f.text_field :taster %>
+  </div>
+  <div class="field">
+    <%= f.label :temperature %><br />
+    <%= f.text_field :temperature %>
+  </div>
+  <div class="field">
+    <%= f.label :color %><br />
+    <%= f.text_area :color %>
+  </div>
+  <div class="field">
+    <%= f.label :head %><br />
+    <%= f.text_area :head %>
+  </div>
+  <div class="field">
+    <%= f.label :aroma %><br />
+    <%= f.text_area :aroma %>
+  </div>
+  <div class="field">
+    <%= f.label :taste %><br />
+    <%= f.text_area :taste %>
+  </div>
+  <div class="field">
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </div>
+  <div class="field">
+    <%= f.label :finish %><br />
+    <%= f.text_area :finish %>
+  </div>
+  <div class="field">
+    <%= f.label :faults %><br />
+    <%= f.text_area :faults %>
+  </div>
+  <div class="field">
+    <%= f.label :quality %><br />
+    <%= f.text_field :quality %>
+  </div>
+  <div class="field">
+    <%= f.label :tipicity %><br />
+    <%= f.text_field :tipicity %>
+  </div>
+  <div class="field">
+    <%= f.label :note %><br />
+    <%= f.text_area :note %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

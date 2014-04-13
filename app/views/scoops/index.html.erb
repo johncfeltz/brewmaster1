@@ -1,0 +1,29 @@
+<h1>Listing scoops</h1>
+
+<table>
+  <tr>
+    <th>Batch</th>
+    <th>Ingredient</th>
+    <th>Quantity</th>
+    <th>Unit</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @scoops.each do |scoop| %>
+  <tr>
+    <td><%= scoop.batch_id %></td>
+    <td><%= scoop.ingredient_id %></td>
+    <td><%= scoop.quantity %></td>
+    <td><%= scoop.unit %></td>
+    <td><%= link_to 'Show', scoop %></td>
+    <td><%= link_to 'Edit', edit_scoop_path(scoop) %></td>
+    <td><%= link_to 'Destroy', scoop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Scoop', new_scoop_path %>

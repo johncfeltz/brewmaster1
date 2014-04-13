@@ -1,0 +1,66 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Location:</b>
+  <%= @batch.location %>
+</p>
+
+<p>
+  <b>Size:</b>
+  <%= @batch.size %>
+</p>
+
+<p>
+  <b>Abv:</b>
+  <%= @batch.abv %>
+</p>
+
+<p>
+  <b>Og:</b>
+  <%= @batch.og %>
+</p>
+
+<p>
+  <b>Fg:</b>
+  <%= @batch.fg %>
+</p>
+
+<p>
+  <b>Brewstyle:</b>
+  <%= @batch.brewstyle.style %>
+</p>
+
+<p>
+  <b>Brewmaster:</b>
+  <%= @batch.brewmaster.name %>
+</p>
+
+<p>
+  <b>Brewname:</b>
+  <%= @batch.brewname.name %>
+</p>
+
+<p>
+  <b>Baserecipe:</b>
+  <%= @batch.baserecipe.name_src_ref %>
+</p>
+
+<p>
+  <b>Isfinished:</b>
+  <%= @batch.isfinished %>
+</p>
+
+<p>
+  <b>Note:</b>
+  <%= @batch.note %>
+</p>
+
+<%= render :partial => "show_scoops", :locals => { :scoops => @scoops } %>
+<p><i>Put in button to add scoops</i></p>
+<%= render :partial => "show_brewsteps", :locals => { :brewsteps => @brewsteps } %>
+<p><i>Put in button to add brewsteps</i></p>
+<%= render :partial => "show_tastingnotes", :locals => { :tastingnotes => @tastingnotes } %>
+<p><i>Put in button to add tasting notes</i></p>
+
+<%= link_to 'Edit', edit_batch_path(@batch) %> |
+<%= link_to 'Back', batches_path %>

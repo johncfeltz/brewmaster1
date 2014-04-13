@@ -1,0 +1,26 @@
+<% if brewsteps.empty? -%>
+  <p>No Brew Steps</p>
+<% else -%>
+  <h3>Brew Steps</h3>
+  <table width="100%" class="listset">
+  	<tr class="listheader">
+	  <td>Elapsed Time</td>
+      <td>Timestamp</td>
+	  <td>Action</td>
+      <td>Observation</td>
+	</tr> 
+
+  <% odd_or_even = 1 -%>
+  <% prevtime = brewsteps[0].created_at -%>		  
+  <% for brewstep in brewsteps -%>
+    <% odd_or_even = 1 - odd_or_even -%>
+    <tr class="listrow<%= odd_or_even -%>">
+      <td><%= brewstep.created_at - prevtime -%></td>
+      <td><%= brewstep.created_at -%></td>
+      <td><%= brewstep.action -%></td>
+      <td><%= brewstep.observation -%></td>
+      <% prevtime = brewstep.created_at -%>
+    </tr>
+  <% end -%>
+  </table>
+<% end -%>

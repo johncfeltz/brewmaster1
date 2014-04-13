@@ -1,0 +1,28 @@
+<% if tastingnotes.empty? -%>
+  <p>No Tasting Notes</p>
+<% else -%>
+  <h3>Tasting Notes</h3>
+  <table width="100%" class="listset">
+  	<tr class="listheader">
+	  <td>Date</td>
+      <td>Taster</td>
+	  <td>Quality</td>
+      <td>Tipicity</td>
+	</tr> 
+
+  <% odd_or_even = 1 -%>
+  <% for tastingnote in tastingnotes -%>
+    <% odd_or_even = 1 - odd_or_even -%>
+    <tr class="listrow<%= odd_or_even -%>">
+      <td><%= link_to tastingnote.created_at, {:controller => "tastingnotes", :action => "show",
+     		:id => tastingnote.id} -%></td>
+      <td><%= link_to tastingnote.taster, {:controller => "tastingnotes", :action => "show",
+     		:id => tastingnote.id} -%></td>
+      <td><%= link_to tastingnote.quality, {:controller => "tastingnotes", :action => "show",
+     		:id => tastingnote.id} -%></td>
+      <td><%= link_to tastingnote.tipicity, {:controller => "tastingnotes", :action => "show",
+     		:id => tastingnote.id} -%></td>
+    </tr>
+  <% end -%>
+  </table>
+<% end -%>

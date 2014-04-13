@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Action:</b>
+  <%= @brewstep.action %>
+</p>
+
+<p>
+  <b>Observation:</b>
+  <%= @brewstep.observation %>
+</p>
+
+<p>
+  <b>Batch:</b>
+  <%= @brewstep.batch_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_brewstep_path(@brewstep) %> |
+<%= link_to 'Back', brewsteps_path %>

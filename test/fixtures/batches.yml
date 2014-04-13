@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  location: MyString
+  size: 1.5
+  abv: 1.5
+  og: 1.5
+  fg: MyString
+  float: MyString
+  brewstyle_id: 1
+  brewmaster_id: 1
+  brewname_id: 1
+  baserecipe_id: 1
+  isfinished: false
+  note: MyText
+
+two:
+  location: MyString
+  size: 1.5
+  abv: 1.5
+  og: 1.5
+  fg: MyString
+  float: MyString
+  brewstyle_id: 1
+  brewmaster_id: 1
+  brewname_id: 1
+  baserecipe_id: 1
+  isfinished: false
+  note: MyText

@@ -1,0 +1,43 @@
+<h1>Listing batches</h1>
+
+<table>
+  <tr>
+    <th>Location</th>
+    <th>Size</th>
+    <th>Abv</th>
+    <th>Og</th>
+    <th>Fg</th>
+    <th>Brewstyle</th>
+    <th>Brewmaster</th>
+    <th>Brewname</th>
+    <th>Baserecipe</th>
+    <th>Isfinished</th>
+    <th>Note</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @batches.each do |batch| %>
+  <tr>
+    <td><%= batch.location %></td>
+    <td><%= batch.size %></td>
+    <td><%= batch.abv %></td>
+    <td><%= batch.og %></td>
+    <td><%= batch.fg %></td>
+    <td><%= batch.brewstyle.style %></td>
+    <td><%= batch.brewmaster.name %></td>
+    <td><%= batch.brewname.name %></td>
+    <td><%= batch.baserecipe.name_src_ref %></td>
+    <td><%= batch.isfinished %></td>
+    <td><%= batch.note %></td>
+    <td><%= link_to 'Show', batch %></td>
+    <td><%= link_to 'Edit', edit_batch_path(batch) %></td>
+    <td><%= link_to 'Destroy', batch, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Batch', new_batch_path %>

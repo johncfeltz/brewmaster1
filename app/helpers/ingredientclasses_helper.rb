@@ -1,0 +1,2 @@
+module IngredientclassesHelper
+end

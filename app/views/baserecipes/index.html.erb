@@ -1,0 +1,31 @@
+<h1>Listing Base Recipes</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Recipe Source</th>
+    <th>Source Reference</th>
+    <th>Recipe Details</th>
+    <th>Notes</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @baserecipes.each do |baserecipe| %>
+  <tr>
+    <td><%= baserecipe.name %></td>
+    <td><%= baserecipe.recipesource.source %></td>
+    <td><%= baserecipe.recipesourceref %></td>
+    <td><%= baserecipe.recipe %></td>
+    <td><%= baserecipe.note %></td>
+    <td><%= link_to 'Show', baserecipe %></td>
+    <td><%= link_to 'Edit', edit_baserecipe_path(baserecipe) %></td>
+    <td><%= link_to 'Destroy', baserecipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Baserecipe', new_baserecipe_path %>

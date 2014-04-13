@@ -1,0 +1,37 @@
+<%= form_for(@baserecipe) do |f| %>
+  <% if @baserecipe.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@baserecipe.errors.count, "error") %> prohibited this baserecipe from being saved:</h2>
+
+      <ul>
+      <% @baserecipe.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :recipesource_id %><br />
+    <%= f.select(:recipesource_id, @rs) %>
+  </div>
+  <div class="field">
+    <%= f.label :recipesourceref %><br />
+    <%= f.text_field :recipesourceref %>
+  </div>
+  <div class="field">
+    <%= f.label :recipe %><br />
+    <%= f.text_area :recipe %>
+  </div>
+  <div class="field">
+    <%= f.label :note %><br />
+    <%= f.text_area :note %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

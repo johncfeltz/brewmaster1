@@ -1,0 +1,49 @@
+<h1>Listing tastingnotes</h1>
+
+<table>
+  <tr>
+    <th>Batch</th>
+    <th>Date</th>
+    <th>Taster</th>
+    <th>Temperature</th>
+    <th>Color</th>
+    <th>Head</th>
+    <th>Aroma</th>
+    <th>Taste</th>
+    <th>Body</th>
+    <th>Finish</th>
+    <th>Faults</th>
+    <th>Quality</th>
+    <th>Tipicity</th>
+    <th>Note</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @tastingnotes.each do |tastingnote| %>
+  <tr>
+    <td><%= tastingnote.batch.num_name_date %></td>
+    <td><%= tastingnote.date %></td>
+    <td><%= tastingnote.taster %></td>
+    <td><%= tastingnote.temperature %></td>
+    <td><%= tastingnote.color %></td>
+    <td><%= tastingnote.head %></td>
+    <td><%= tastingnote.aroma %></td>
+    <td><%= tastingnote.taste %></td>
+    <td><%= tastingnote.body %></td>
+    <td><%= tastingnote.finish %></td>
+    <td><%= tastingnote.faults %></td>
+    <td><%= tastingnote.quality %></td>
+    <td><%= tastingnote.tipicity %></td>
+    <td><%= tastingnote.note %></td>
+    <td><%= link_to 'Show', tastingnote %></td>
+    <td><%= link_to 'Edit', edit_tastingnote_path(tastingnote) %></td>
+    <td><%= link_to 'Destroy', tastingnote, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Tastingnote', new_tastingnote_path %>

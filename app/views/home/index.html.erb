@@ -1,0 +1,26 @@
+<h1>Brewmaster 0.5</h1>
+<h2>Welcome to Project Brewmaster (C) 2012</h2>
+
+<p>Brewmaster is the home brewer's reference, brew diary, and tasting book.</p>
+
+
+<%= link_to "Let's Brew!", new_batch_path %>
+</br>
+<%= link_to "Batches", batches_path %>
+</br>
+<%= link_to "Tasting Notes", tastingnotes_path %>
+</br>
+<hr />
+<br />
+<%= link_to "Brew Steps", :controller => "brewsteps" %>  <i>This will go away...</i>
+</br>
+<%= link_to "Scoops", :controller => "scoops" %>  <i>This will go away...</i>
+<hr />
+</br>
+<%= link_to "Manage Resource Info", :controller => "resource" %>
+</br>
+<%= link_to "Manage ENUM Fields", :controller => "enum" %>
+</br>
+<hr />
+</br>
+<%= link_to "Credits", :action => "credits"%>   <%= link_to "About", :action => "about"%>

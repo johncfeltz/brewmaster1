@@ -1,0 +1,57 @@
+<%= form_for(@batch) do |f| %>
+  <% if @batch.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@batch.errors.count, "error") %> prohibited this batch from being saved:</h2>
+
+      <ul>
+      <% @batch.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :location %><br />
+    <%= f.text_field :location %>
+  </div>
+  <div class="field">
+    <%= f.label :size %><br />
+    <%= f.text_field :size %>
+  </div>
+  <div class="field">
+    <%= f.label :abv %><br />
+    <%= f.text_field :abv %>
+  </div>
+  <div class="field">
+    <%= f.label :og %><br />
+    <%= f.text_field :og %>
+  </div>
+  <div class="field">
+    <%= f.label :fg %><br />
+    <%= f.text_field :fg %>
+  </div>
+  <div class="field">
+    <%= f.label :brewstyle_id %><br />
+    <%= f.select(:brewstyle_id, @bs) %>
+  </div>
+  <div class="field">
+    <%= f.label :brewmaster_id %><br />
+    <%= f.select(:brewmaster_id, @bm) %>
+  </div>
+  <div class="field">
+    <%= f.label :brewname_id %><br />
+    <%= f.select(:brewname_id, @bn) %>
+  </div>
+  <div class="field">
+    <%= f.label :baserecipe_id %><br />
+    <%= f.select(:baserecipe_id, @br) %>
+  </div>
+  <div class="field">
+    <%= f.label :note %><br />
+    <%= f.text_area :note %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

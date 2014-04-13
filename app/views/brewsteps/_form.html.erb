@@ -1,0 +1,34 @@
+<%= form_for(@brewstep) do |f| %>
+  <% if @brewstep.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@brewstep.errors.count, "error") %> prohibited this brewstep from being saved:</h2>
+
+      <ul>
+      <% @brewstep.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<p><i>This will be simplified in version 0.9; Batch will be autoloaded.    Completion of the form returns you to the Batch 
+	screen.  Editing will be permitted only on the observation, not the action.</i></p>
+<br />
+<hr />
+<br />
+  <div class="field">
+    <%= f.label :batch_id %><br />
+    <%= f.number_field :batch_id %>
+  </div>
+  <div class="field">
+    <%= f.label :action %><br />
+    <%= f.text_field :action %>
+  </div>
+  <div class="field">
+    <%= f.label :observation %><br />
+    <%= f.text_area :observation %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

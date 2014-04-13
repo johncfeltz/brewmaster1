@@ -1,0 +1,37 @@
+<%= form_for(@scoop) do |f| %>
+  <% if @scoop.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@scoop.errors.count, "error") %> prohibited this scoop from being saved:</h2>
+
+      <ul>
+      <% @scoop.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<p><i>This will be simplified in version 0.9; Batch will be autoloaded.  Completion of the form returns you to the Batch screen.  Editing will be permitted only if the batch is not
+	completely brewed; otherwise the entry is locked.</i></p>
+<br />
+<hr />
+<br />
+  <div class="field">
+    <%= f.label :batch_id %><br />
+    <%= f.number_field :batch_id %>
+  </div>
+  <div class="field">
+    <%= f.label :ingredient_id %><br />
+    <%= f.select(:ingredient_id, @in) %>
+  </div>
+  <div class="field">
+    <%= f.label :quantity %><br />
+    <%= f.text_field :quantity %>
+  </div>
+  <div class="field">
+    <%= f.label :unit %><br />
+    <%= f.text_field :unit %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

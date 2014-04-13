@@ -1,0 +1,35 @@
+<h1>Listing ingredientsources</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Address1</th>
+    <th>Address2</th>
+    <th>Phone</th>
+    <th>Email</th>
+    <th>Url</th>
+    <th>Note</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @ingredientsources.each do |ingredientsource| %>
+  <tr>
+    <td><%= ingredientsource.name %></td>
+    <td><%= ingredientsource.address1 %></td>
+    <td><%= ingredientsource.address2 %></td>
+    <td><%= ingredientsource.phone %></td>
+    <td><%= ingredientsource.email %></td>
+    <td><%= ingredientsource.url %></td>
+    <td><%= ingredientsource.note %></td>
+    <td><%= link_to 'Show', ingredientsource %></td>
+    <td><%= link_to 'Edit', edit_ingredientsource_path(ingredientsource) %></td>
+    <td><%= link_to 'Destroy', ingredientsource, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Ingredientsource', new_ingredientsource_path %>
